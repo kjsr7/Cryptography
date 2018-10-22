@@ -33,18 +33,36 @@ mpz_out_str(stdout, 10, b);
 cout<<endl;
 
 mpz_powm(x,g,a,n); 
-
+/*mpz_pow_ui(x,g,1);
+cout<<"debug ";
+mpz_out_str(stdout, 10, x);cout<<endl;
+*/
 cout<<"x is "<<endl;
 mpz_out_str(stdout, 10, x);
 cout<<endl;
 
 mpz_powm(y,g,b,n);
+
+cout<<"y is "<<endl;
+mpz_out_str(stdout, 10, y);
+cout<<endl;
+
 mpz_powm(ka,y,a,n);
 
-mpz_powm(kb,x,b,n);
-printf("secret key for alice is %Zd\n", (signed size_t)ka);
+cout<<"ka is "<<endl;
+mpz_out_str(stdout, 10, ka);
+cout<<endl;
 
-printf("secret key for bob is %Zd\n", (signed size_t)kb);
+mpz_powm(kb,x,b,n);
+
+
+cout<<"kb is "<<endl;
+mpz_out_str(stdout, 10, kb);
+cout<<endl;
+
+//printf("secret key for alice is %Zd\n", (signed size_t)ka);
+//
+//printf("secret key for bob is %Zd\n", (signed size_t)kb);
 
 
 

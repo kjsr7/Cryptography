@@ -26,6 +26,7 @@ int main()
     a = 4; // a is the chosen private key
     printf("The private key a for Alice : %lld\n", a);
     x = power(G, a, P); // gets the generated key
+    cout<<"debug "<<x<<endl;
 
     // Bob will choose the private key b
     b = 3; // b is the chosen private key

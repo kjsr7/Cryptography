@@ -9,7 +9,7 @@ int isgen(mpz_t r, mpz_t n)
 
 //mpz_out_str(stdout, 10, n);
 //cout<<endl;
-mpz_t x,x2;
+/*mpz_t x,x2;
 mpz_init(x); mpz_init(x2);
 mpz_set_ui(x,1);
 mpz_t cn;
@@ -42,6 +42,26 @@ return 1;
 }
 else
 return 0;
+*/
+
+mpz_t result,two,one;mpz_init(result);mpz_init(two);mpz_init(one);
+mpz_set_ui(two,2);
+mpz_set_ui(one,1);
+mpz_set(result,n);
+mpz_sub_ui(result,result,1);
+mpz_t r2;
+mpz_init(r2);
+mpz_cdiv_q(r2,result,two);
+mpz_t x2;
+mpz_init(x2);
+mpz_powm(x2,r,result,n);
+if(mpz_cmp(x2,one) == 0)
+{
+return 0;
+}
+else
+return 1;
+
 
 }
 int main()

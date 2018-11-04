@@ -3,47 +3,6 @@
 using namespace std;
 int isgen(mpz_t r, mpz_t n)
 {
-//cout<<"called "<<endl;
-//mpz_out_str(stdout, 10, r);
-//cout<<endl;
-
-//mpz_out_str(stdout, 10, n);
-//cout<<endl;
-/*mpz_t x,x2;
-mpz_init(x); mpz_init(x2);
-mpz_set_ui(x,1);
-mpz_t cn;
-mpz_init(cn); 
-mpz_set(cn,n);
-mpz_sub_ui(cn,cn,1);
-mpz_powm(x2,r,x,n);
-//mpz_out_str(stdout, 10, x); cout<<" ";mpz_out_str(stdout, 10, x2);cout<<endl;
-mpz_t sum,result,two;
-mpz_init(sum);
-mpz_init(two);mpz_set_ui(two,2);
-mpz_init(result);
-mpz_mul(result,n,cn);
-
-mpz_cdiv_q(result,result,two);
-mpz_set(sum,x2);
-while(mpz_cmp(x,cn))
-{
-mpz_add_ui(x,x,1);
-//mpz_out_str(stdout, 10, x); 
-mpz_powm(x2, r, x, n); 
-//cout<<" ";mpz_out_str(stdout, 10, x2);cout<<endl;
-mpz_add(sum,sum,x2);
-}
-//cout<<"the sum and result is "<<endl;
-//mpz_out_str(stdout,10,sum); cout<<" "; mpz_out_str(stdout, 10, result);cout<<endl;
-if(mpz_cmp(sum,result) == 0)
-{
-return 1;
-}
-else
-return 0;
-*/
-
 mpz_t result,two,one;mpz_init(result);mpz_init(two);mpz_init(one);
 mpz_set_ui(two,2);
 mpz_set_ui(one,1);
@@ -61,8 +20,6 @@ return 0;
 }
 else
 return 1;
-
-
 }
 int main()
 {
@@ -88,14 +45,11 @@ mpz_sub_ui(one,one,2);
 
 while(1)
 {
-//mpz_out_str(stdout, 10, r);
-//cout<<endl;
 if(isgen(r,n))
 break;
 if(mpz_cmp(r,one) == 0)
 break;
 mpz_add_ui(r,r,1);
-
 }
 
 if(isgen(r,n))

@@ -1,0 +1,34 @@
+jai@client:~$ ls
+1.py                                  Desktop           project
+Android                               Documents         Public
+atom-amd64.deb                        Downloads         PycharmProjects
+auth-client-config_0.9ubuntu1.tar.gz  examples.desktop  saurabhgupta.pdf
+business_intelligence                 lecture13.pptx    snap
+coding                                Music             Templates
+Cryptography_lab                      Pictures          Videos
+jai@client:~$ tar xf uth-client-config_0.9ubuntu1.tar.gz
+tar: uth-client-config_0.9ubuntu1.tar.gz: Cannot open: No such file or directory
+tar: Error is not recoverable: exiting now
+jai@client:~$ cd auth-client-config_0.9ubuntu1/
+jai@client:~/auth-client-config_0.9ubuntu1$ ls
+auth-client-config-0.9ubuntu1
+jai@client:~/auth-client-config_0.9ubuntu1$ file auth-client-config-0.9ubuntu1
+auth-client-config-0.9ubuntu1: directory
+jai@client:~/auth-client-config_0.9ubuntu1$ cd auth-client-config-0.9ubuntu1/
+jai@client:~/auth-client-config_0.9ubuntu1/auth-client-config-0.9ubuntu1$ ls
+auth-client-config    COPYING  implementation  README        share
+auth-client-config.8  debian   install.py      run_tests.sh  tests
+ChangeLog             etc      lib             sbin
+jai@client:~/auth-client-config_0.9ubuntu1/auth-client-config-0.9ubuntu1$ ./auth-client-config 
+  File "./auth-client-config", line 142
+    print datetime.datetime.now().strftime("[%Y-%m-%d_%H:%M:%S]")
+                 ^
+SyntaxError: invalid syntax
+jai@client:~/auth-client-config_0.9ubuntu1/auth-client-config-0.9ubuntu1$ ./install.py 
+  File "./install.py", line 70
+    print "Destination directory does not exist!"
+                                                ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Destination directory does not exist!")?
+jai@client:~/auth-client-config_0.9ubuntu1/auth-client-config-0.9ubuntu1$ vi README 
+jai@client:~/auth-client-config_0.9ubuntu1/auth-client-config-0.9ubuntu1$ 
+

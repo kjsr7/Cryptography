@@ -1,0 +1,30 @@
+commands for server implementation
+->hostname
+ -> sudo hostnamectl set-hostname kdc.fsr.com
+     close the terminal and open it so that name is changed to kdc@admin
+ -> sudo apt-get install krb5-kdc krb5-admin-server
+     kerberos name
+     kdc name
+     server name
+ 
+ -> sudo nano /etc/hosts
+     client ipadress client.fsr.com client
+     kdcipadress     kdc.fsr.com    fsr
+     serveripadress  server.fsr.com server  
+ -> sudo krb5_newrealm
+     enter database masterkey
+
+ ->  sudo kadmin.local
+      kadmin.local:  addprinc naveen/admin
+      WARNING: no policy specified for naveen/admin@FSR.COM; defaulting to no policy
+      Enter password for principal "naveen/admin@FSR.COM": 
+      Re-enter password for principal "naveen/admin@FSR.COM": 
+      Principal "naveen/admin@FSR.COM" created.
+      kadmin.local:  quit
+
+ -> sudo nano /etc/krb5kdc/kadm5.acl
+   add naveen/admin@FSR.com
+ -> kinit naveen/admin
+    enter password
+ -> klist
+     ticket 

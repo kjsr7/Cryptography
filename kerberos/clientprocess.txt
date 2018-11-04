@@ -1,0 +1,241 @@
+jai@client:~$ sudo apt install krb5-user libpam-krb5 libpam-ccreds auth-client-config
+[sudo] password for jai: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package auth-client-config
+jai@client:~$ uname -a
+Linux client.fsr.com 4.18.0-10-generic #11-Ubuntu SMP Thu Oct 11 15:13:55 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+jai@client:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 18.10
+Release:	18.10
+Codename:	cosmic
+jai@client:~$ sudo dpkg -i /absolute/path/to/deb/file
+dpkg: error: cannot access archive '/absolute/path/to/deb/file': No such file or directory
+jai@client:~$ sudo dpkg -i https://bazaar.launchpad.net/~jamie-strandboge/auth-client-config/trunk
+dpkg: error: cannot access archive 'https://bazaar.launchpad.net/~jamie-strandboge/auth-client-config/trunk': No such file or directory
+jai@client:~$ dpkg
+dpkg: error: need an action option
+
+Type dpkg --help for help about installing and deinstalling packages [*];
+Use 'apt' or 'aptitude' for user-friendly package management;
+Type dpkg -Dhelp for a list of dpkg debug flag values;
+Type dpkg --force-help for a list of forcing options;
+Type dpkg-deb --help for help about manipulating *.deb files;
+
+Options marked [*] produce a lot of output - pipe it through 'less' or 'more' !
+jai@client:~$ gdebi
+Usage: gdebi [options] filename
+For a graphical version run gdebi-gtk
+
+
+Options:
+  --version             show program's version number and exit
+  -h, --help            show this help message and exit
+  -n, --non-interactive
+                        Run non-interactive (dangerous!)
+  -o APT_OPTS, --option=APT_OPTS
+                        Set an APT configuration option
+  -q, --quiet           Do not show progress information
+  --apt-line            Simulate only and print a apt-get install compatible
+                        line to stderr
+  --root=ROOTDIR        Use alternative root dir
+jai@client:~$ gdebi-gtk
+
+Command 'gdebi-gtk' not found, but can be installed with:
+
+sudo apt install gdebi
+
+jai@client:~$ gdebi-gtk
+
+Command 'gdebi-gtk' not found, but can be installed with:
+
+sudo apt install gdebi
+
+jai@client:~$ sudo apt install gdebi
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  gnome-icon-theme libgtk2-perl libpango-perl
+Suggested packages:
+  libgtk2-perl-doc
+The following NEW packages will be installed:
+  gdebi gnome-icon-theme libgtk2-perl libpango-perl
+0 upgraded, 4 newly installed, 0 to remove and 19 not upgraded.
+Need to get 10.3 MB of archives.
+After this operation, 19.3 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://archive.ubuntu.com/ubuntu cosmic/universe amd64 gnome-icon-theme all 3.12.0-3 [9,620 kB]
+Get:2 http://archive.ubuntu.com/ubuntu cosmic/universe amd64 gdebi all 0.9.5.7+nmu2 [23.7 kB]
+Get:3 http://archive.ubuntu.com/ubuntu cosmic/universe amd64 libpango-perl amd64 1.227-2build1 [157 kB]
+Get:4 http://archive.ubuntu.com/ubuntu cosmic/universe amd64 libgtk2-perl amd64 2:1.24992-1build1 [544 kB]
+Fetched 10.3 MB in 3s (3,023 kB/s)    
+Selecting previously unselected package gnome-icon-theme.
+(Reading database ... 174845 files and directories currently installed.)
+Preparing to unpack .../gnome-icon-theme_3.12.0-3_all.deb ...
+Unpacking gnome-icon-theme (3.12.0-3) ...
+Selecting previously unselected package gdebi.
+Preparing to unpack .../gdebi_0.9.5.7+nmu2_all.deb ...
+Unpacking gdebi (0.9.5.7+nmu2) ...
+Selecting previously unselected package libpango-perl.
+Preparing to unpack .../libpango-perl_1.227-2build1_amd64.deb ...
+Unpacking libpango-perl (1.227-2build1) ...
+Selecting previously unselected package libgtk2-perl.
+Preparing to unpack .../libgtk2-perl_2%3a1.24992-1build1_amd64.deb ...
+Unpacking libgtk2-perl (2:1.24992-1build1) ...
+Processing triggers for mime-support (3.60ubuntu1) ...
+Processing triggers for desktop-file-utils (0.23-3ubuntu2) ...
+Setting up gnome-icon-theme (3.12.0-3) ...
+update-alternatives: using /usr/share/icons/gnome/scalable/places/debian-swirl.svg to provide /usr/share/icons/gnome/scalable/places/start-here.svg (start-here.svg) in auto mode
+Processing triggers for man-db (2.8.4-2) ...
+Processing triggers for gnome-menus (3.13.3-11ubuntu2) ...
+Setting up libpango-perl (1.227-2build1) ...
+Setting up gdebi (0.9.5.7+nmu2) ...
+Setting up libgtk2-perl (2:1.24992-1build1) ...
+jai@client:~$ sudo dpkg -i https://bazaar.launchpad.net/~jamie-strandboge/auth-client-config/trunk
+jai@client:~$ man auth-client-config
+No manual entry for auth-client-config
+jai@client:~$ apt install man auth-client-config
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (13: Permission denied)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+jai@client:~$ sudo apt install man auth-client-config
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Note, selecting 'man-db' instead of 'man'
+E: Unable to locate package auth-client-config
+jai@client:~$ rm -rf /var/lib/dpkg/lock-frontend
+rm: cannot remove '/var/lib/dpkg/lock-frontend': Permission denied
+jai@client:~$ sudo su
+root@client:/home/jai# rm -rf /var/lib/dpkg/lock-frontend
+root@client:/home/jai# apt install auth-client-config
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package auth-client-config
+root@client:/home/jai# exit
+exit
+jai@client:~$ sudo apt install krb5-user libpam-krb5 libpam-ccreds 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  krb5-config libgssrpc4 libkadm5clnt-mit11 libkadm5srv-mit11 libkdb5-9
+Suggested packages:
+  krb5-doc nss-updatedb
+The following NEW packages will be installed:
+  krb5-config krb5-user libgssrpc4 libkadm5clnt-mit11 libkadm5srv-mit11 libkdb5-9 libpam-ccreds libpam-krb5
+0 upgraded, 8 newly installed, 0 to remove and 19 not upgraded.
+Need to get 406 kB of archives.
+After this operation, 1,620 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://archive.ubuntu.com/ubuntu cosmic/main amd64 krb5-config all 2.6 [22.6 kB]
+Get:2 http://archive.ubuntu.com/ubuntu cosmic/main amd64 libgssrpc4 amd64 1.16-2ubuntu1 [54.9 kB]
+Get:3 http://archive.ubuntu.com/ubuntu cosmic/main amd64 libkadm5clnt-mit11 amd64 1.16-2ubuntu1 [38.0 kB]
+Get:4 http://archive.ubuntu.com/ubuntu cosmic/main amd64 libkdb5-9 amd64 1.16-2ubuntu1 [37.3 kB]
+Get:5 http://archive.ubuntu.com/ubuntu cosmic/main amd64 libkadm5srv-mit11 amd64 1.16-2ubuntu1 [49.9 kB]
+Get:6 http://archive.ubuntu.com/ubuntu cosmic/universe amd64 krb5-user amd64 1.16-2ubuntu1 [105 kB]
+Get:7 http://archive.ubuntu.com/ubuntu cosmic/main amd64 libpam-krb5 amd64 4.8-2 [81.1 kB]
+Get:8 http://archive.ubuntu.com/ubuntu cosmic/universe amd64 libpam-ccreds amd64 10-6ubuntu1 [16.9 kB]
+Fetched 406 kB in 2s (258 kB/s)          
+Preconfiguring packages ...
+Selecting previously unselected package krb5-config.
+(Reading database ... 181029 files and directories currently installed.)
+Preparing to unpack .../0-krb5-config_2.6_all.deb ...
+Unpacking krb5-config (2.6) ...
+Selecting previously unselected package libgssrpc4:amd64.
+Preparing to unpack .../1-libgssrpc4_1.16-2ubuntu1_amd64.deb ...
+Unpacking libgssrpc4:amd64 (1.16-2ubuntu1) ...
+Selecting previously unselected package libkadm5clnt-mit11:amd64.
+Preparing to unpack .../2-libkadm5clnt-mit11_1.16-2ubuntu1_amd64.deb ...
+Unpacking libkadm5clnt-mit11:amd64 (1.16-2ubuntu1) ...
+Selecting previously unselected package libkdb5-9:amd64.
+Preparing to unpack .../3-libkdb5-9_1.16-2ubuntu1_amd64.deb ...
+Unpacking libkdb5-9:amd64 (1.16-2ubuntu1) ...
+Selecting previously unselected package libkadm5srv-mit11:amd64.
+Preparing to unpack .../4-libkadm5srv-mit11_1.16-2ubuntu1_amd64.deb ...
+Unpacking libkadm5srv-mit11:amd64 (1.16-2ubuntu1) ...
+Selecting previously unselected package krb5-user.
+Preparing to unpack .../5-krb5-user_1.16-2ubuntu1_amd64.deb ...
+Unpacking krb5-user (1.16-2ubuntu1) ...
+Selecting previously unselected package libpam-krb5:amd64.
+Preparing to unpack .../6-libpam-krb5_4.8-2_amd64.deb ...
+Unpacking libpam-krb5:amd64 (4.8-2) ...
+Selecting previously unselected package libpam-ccreds.
+Preparing to unpack .../7-libpam-ccreds_10-6ubuntu1_amd64.deb ...
+Unpacking libpam-ccreds (10-6ubuntu1) ...
+Setting up libgssrpc4:amd64 (1.16-2ubuntu1) ...
+Setting up libpam-ccreds (10-6ubuntu1) ...
+Setting up libkdb5-9:amd64 (1.16-2ubuntu1) ...
+Processing triggers for libc-bin (2.28-0ubuntu1) ...
+Setting up libkadm5srv-mit11:amd64 (1.16-2ubuntu1) ...
+Processing triggers for man-db (2.8.4-2) ...
+Setting up libkadm5clnt-mit11:amd64 (1.16-2ubuntu1) ...
+Setting up krb5-config (2.6) ...
+Setting up krb5-user (1.16-2ubuntu1) ...
+Setting up libpam-krb5:amd64 (4.8-2) ...
+Processing triggers for libc-bin (2.28-0ubuntu1) ...
+jai@client:~$ vi /etc/host
+host.conf    hostname     hosts        hosts.allow  hosts.deny   
+jai@client:~$ vi /etc/host
+host.conf    hostname     hosts        hosts.allow  hosts.deny   
+jai@client:~$ vi /etc/host
+host.conf    hostname     hosts        hosts.allow  hosts.deny   
+jai@client:~$ vi /etc/hosts
+jai@client:~$ kinit root/admin@FSR.COM
+kinit: Cannot contact any KDC for realm 'FSR.COM' while getting initial credentials
+jai@client:~$ kinit jai/admin@FSR.COM
+kinit: Cannot contact any KDC for realm 'FSR.COM' while getting initial credentials
+jai@client:~$ vi /etc/hosts
+jai@client:~$ sudo su
+root@client:/home/jai# vi /etc/host
+host.conf    hostname     hosts        hosts.allow  hosts.deny   
+root@client:/home/jai# vi /etc/hosts
+root@client:/home/jai# kinit root/admin@FSR.COM
+kinit: Client 'root/admin@FSR.COM' not found in Kerberos database while getting initial credentials
+root@client:/home/jai# kinit jai/admin@FSR.COM
+kinit: Client 'jai/admin@FSR.COM' not found in Kerberos database while getting initial credentials
+root@client:/home/jai# klist
+klist: No credentials cache found (filename: /tmp/krb5cc_0)
+root@client:/home/jai# exit
+exit
+jai@client:~$ kinit root/admin@FSR.COM
+kinit: Client 'root/admin@FSR.COM' not found in Kerberos database while getting initial credentials
+(reverse-i-search)`ro': sudo rm /var/lib/dpkg/lock-f^Cntend
+jai@client:~$ kinit jai/admin@FSR.COM
+kinit: Client 'jai/admin@FSR.COM' not found in Kerberos database while getting initial credentials
+jai@client:~$ ifconfig
+eno1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.30.2.149  netmask 255.255.248.0  broadcast 172.30.7.255
+        inet6 fe80::cdc2:6ee6:c38c:e5b0  prefixlen 64  scopeid 0x20<link>
+        ether 18:66:da:14:11:ac  txqueuelen 1000  (Ethernet)
+        RX packets 79492  bytes 78423303 (78.4 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 19575  bytes 2954087 (2.9 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device interrupt 20  memory 0xf7c00000-f7c20000  
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 1092  bytes 88933 (88.9 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1092  bytes 88933 (88.9 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+jai@client:~$ kinit naveen/admin@FSR.COM
+Password for naveen/admin@FSR.COM: 
+jai@client:~$ klist
+Ticket cache: FILE:/tmp/krb5cc_1000
+Default principal: naveen/admin@FSR.COM
+
+Valid starting       Expires              Service principal
+2018-11-04T17:38:25  2018-11-05T03:38:25  krbtgt/FSR.COM@FSR.COM
+	renew until 2018-11-05T17:38:17
+jai@client:~$ vi /tmp/krb5cc_1000 
+jai@client:~$ 
+

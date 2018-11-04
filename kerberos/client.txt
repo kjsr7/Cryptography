@@ -1,0 +1,25 @@
+1. sudo apt install krb5-user libpam-krb5 libpam-ccreds auth-client-config
+
+If any of the above packages are not found, go to ubuntu search package utility, and search for the corresponding package corresponding to your release version of ubuntu. If found as a debian package, download gdebi, use dpkg to download that package. or If found as a archive file of the package, download it and install it. For installing use the README file of that archive. 
+
+[ To find the release version, use lsb_release -a: it will be either xenial, cosmic, and bionic ]
+
+2. Once the above packages are setup, edit the /etc/hosts file to dns the ip addresses
+
+172.30.2.149    client.fsr.com  client
+172.30.0.196    kdc.fsr.com     kdc
+172.30.0.196    server.fsr.com  server
+
+3. kinit naveen/admin@FSR.COM // this is with respect to the server.
+
+4. klist
+
+[ the following output appears ] 
+
+Ticket cache: FILE:/tmp/krb5cc_1000
+Default principal: naveen/admin@FSR.COM
+
+Valid starting       Expires              Service principal
+2018-11-04T17:38:25  2018-11-05T03:38:25  krbtgt/FSR.COM@FSR.COM
+	renew until 2018-11-05T17:38:17
+

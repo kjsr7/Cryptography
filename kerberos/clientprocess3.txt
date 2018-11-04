@@ -1,0 +1,75 @@
+jai@client:~/auth-client-config_0.9ubuntu1/auth-client-config-0.9ubuntu1$ ls
+auth-client-config  auth-client-config.8  ChangeLog  COPYING  debian  etc  implementation  install.py  lib  README  run_tests.sh  sbin  share  tests
+jai@client:~/auth-client-config_0.9ubuntu1/auth-client-config-0.9ubuntu1$ ./install.py 
+  File "./install.py", line 70
+    print "Destination directory does not exist!"
+                                                ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Destination directory does not exist!")?
+jai@client:~/auth-client-config_0.9ubuntu1/auth-client-config-0.9ubuntu1$ which python
+/usr/bin/python
+jai@client:~/auth-client-config_0.9ubuntu1/auth-client-config-0.9ubuntu1$ file /usr/bin/python
+/usr/bin/python: symbolic link to /usr/bin/python3
+jai@client:~/auth-client-config_0.9ubuntu1/auth-client-config-0.9ubuntu1$ /usr/bin/py
+py3clean           pyclean            pydoc2.7           pygettext2         pyjwt3             python3            python3.6m-config  pyversions
+py3compile         pycompile          pydoc3             pygettext2.7       python             python3.6          python3-config     
+py3versions        pydoc              pydoc3.6           pygettext3         python2            python3.6-config   python3m           
+pybuild            pydoc2             pygettext          pygettext3.6       python2.7          python3.6m         python3m-config    
+jai@client:~/auth-client-config_0.9ubuntu1/auth-client-config-0.9ubuntu1$ /usr/bin/py
+py3clean           pyclean            pydoc2.7           pygettext2         pyjwt3             python3            python3.6m-config  pyversions
+py3compile         pycompile          pydoc3             pygettext2.7       python             python3.6          python3-config     
+py3versions        pydoc              pydoc3.6           pygettext3         python2            python3.6-config   python3m           
+pybuild            pydoc2             pygettext          pygettext3.6       python2.7          python3.6m         python3m-config    
+jai@client:~/auth-client-config_0.9ubuntu1/auth-client-config-0.9ubuntu1$ ln -s /usr/bin/python2.7 /usr/bin/python
+ln: failed to create symbolic link '/usr/bin/python': File exists
+jai@client:~/auth-client-config_0.9ubuntu1/auth-client-config-0.9ubuntu1$ rm -rf  /usr/bin/python
+rm: cannot remove '/usr/bin/python': Permission denied
+jai@client:~/auth-client-config_0.9ubuntu1/auth-client-config-0.9ubuntu1$ sudo rm -rf  /usr/bin/python
+[sudo] password for jai: 
+jai@client:~/auth-client-config_0.9ubuntu1/auth-client-config-0.9ubuntu1$ ln -s /usr/bin/python2.7 /usr/bin/python
+ln: failed to create symbolic link '/usr/bin/python': Permission denied
+jai@client:~/auth-client-config_0.9ubuntu1/auth-client-config-0.9ubuntu1$ sudo ln -s /usr/bin/python2.7 /usr/bin/python
+jai@client:~/auth-client-config_0.9ubuntu1/auth-client-config-0.9ubuntu1$ ./install.py 
+auth-client-config (C) 2007 Jamie Strandboge
+
+
+Prefix directory does not exist!
+jai@client:~/auth-client-config_0.9ubuntu1/auth-client-config-0.9ubuntu1$ vi README 
+jai@client:~/auth-client-config_0.9ubuntu1/auth-client-config-0.9ubuntu1$ ./install.py --prefix=/usr --config-prefix=/etc
+auth-client-config (C) 2007 Jamie Strandboge
+
+
+Compiling python source files ...
+
+
+Finished compiling.
+
+Copy program files...
+
+Updating ./sbin/auth-client-config to use /etc
+Updating ./share/man/man8/auth-client-config.8 to use /etc
+cp: cannot create regular file '/usr/sbin/auth-client-config': Permission denied
+Traceback (most recent call last):
+  File "./install.py", line 238, in <module>
+    doInstall()
+  File "./install.py", line 126, in doInstall
+    raise "CopyError", "Error!!! Could not copy File. Maybe wrong permissions?"
+TypeError: exceptions must be old-style classes or derived from BaseException, not str
+jai@client:~/auth-client-config_0.9ubuntu1/auth-client-config-0.9ubuntu1$ sudo su
+root@client:/home/jai/auth-client-config_0.9ubuntu1/auth-client-config-0.9ubuntu1# ./install.py --prefix=/usr --config-prefix=/etc
+auth-client-config (C) 2007 Jamie Strandboge
+
+
+Compiling python source files ...
+
+
+Finished compiling.
+
+Copy program files...
+
+Updating ./sbin/auth-client-config to use /etc
+Updating ./share/man/man8/auth-client-config.8 to use /etc
+Finished copying program files.
+
+auth-client-config installed successfully! :)
+root@client:/home/jai/auth-client-config_0.9ubuntu1/auth-client-config-0.9ubuntu1# 
+
